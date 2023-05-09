@@ -15,11 +15,12 @@ document.querySelector('model-viewer').addEventListener('progress', onProgress);
 
 window.addEventListener('load', (event) => {
   const modelViewer = document.querySelector('model-viewer');
-  // Dispatch synthetic click event
-  const click = new MouseEvent('click', {
-    view: window,
-    bubbles: true,
-    cancelable: true
-  });
-  modelViewer.dispatchEvent(click);
+  setTimeout(() => {
+    const click = new MouseEvent('click', {
+      view: window,
+      bubbles: true,
+      cancelable: true
+    });
+    modelViewer.dispatchEvent(click);
+  }, 2000); // wait 2 seconds before dispatching the click
 });
